@@ -36,11 +36,12 @@
 .inpt {
 
     padding: 18px;
-    background-color: #f7f9fb;
+    background-color: rgba(128, 128, 128, 0.014);
     width: 377px;
     border: 1px solid #ccc;
     border-radius: 10px;
     margin-bottom: 16px;
+    
     
     
 }
@@ -56,5 +57,24 @@
     border: none;
     font-size: 18px;
     
+
+}
+
+
+.error-message {
+
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+    
+}
+
+.sucess-message {
+
+  color: green;
+  font-size: 12px;
+  margin-top: 1px;
+ 
+
 
 }

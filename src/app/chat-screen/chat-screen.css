@@ -1,0 +1,185 @@
+
+.container{
+
+    display: flex;
+}
+
+.left-panel{
+
+    height: 100vh;
+    width: 20vw;
+    background-color: white;
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #1C1C1C1A;
+}
+
+.central-panel{
+
+    height: 100vh;
+    width: 80vw;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+        
+}
+
+.logo{
+
+    background-image: url(../assets/Chat.png);
+    justify-content: center;
+    width: 444px;
+    height: 101px;
+    margin-top: 11%;
+    
+    
+}
+
+.top{
+
+    width: 100%;
+    min-height:170px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+.bottom{
+    width: 100%;
+    min-height: 170px;
+    border-top: 1px solid #1C1C1C1A;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    
+}
+
+.btn1{
+
+    width: 100%;
+    height: 40px;
+    background-color: #1C1C1C;
+    color: white;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 400;
+    
+}
+
+
+.btn{
+
+    width: 100%;
+    height: 44px;
+    border: none;
+    background-color: white;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 400;
+    padding-left: 22px;
+    display: flex;
+    align-items: center;
+
+}
+
+.btn i{
+    
+    font-size: 15px;
+    padding: 25px;
+}
+
+
+
+.container-sec{
+
+    max-width: 75%;
+    background-color: white;
+    height: 300px;
+    display: flex;
+    margin-top: 40px;
+    text-align: center;
+    
+}
+
+.sec{
+
+    background-color: white;
+    color: #1C1C1C;
+    width: 300px;
+    height: 100%;
+    margin-right: 30px;
+    
+    
+    
+}
+
+.sec:nth-last-child(1) {
+
+    margin-right: 0px;
+
+}
+
+
+
+
+.t1{
+
+    text-align: center;
+    padding-bottom: 22px;
+    font-size: 15px;
+    
+}
+
+.text{
+    padding-bottom: 16px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    background-color: #F7F9FB;
+    padding: 15px;
+    border: 2px solid #F7F9FB;
+    border-radius: 5px;
+    
+    
+}
+
+.container-inpt input {
+
+    width: 400px;   
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.sec-p i{
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 15px;
+
+}  
+
+.container-inpt {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 40px;
+    border-radius: 16px;
+    padding: 16px;
+    background-color:  #F7F9FB;  
+    
+}
+
+.container-inpt i {
+    margin-right: 10px;
+}
+
+.send-button{
+    color: #9fa0a2;
+    margin-right: 0px !important;
+}

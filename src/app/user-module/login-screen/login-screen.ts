@@ -11,6 +11,11 @@ export class LoginScreen {
 
   LoginForm: FormGroup;
 
+  emailErrorMessage: string;
+  passwordErrorMessage: string;
+  loginErrorMessage: string;
+  loginSucessMessage: string;
+
   constructor(private fb: FormBuilder) {
     //quando a tela iniciar 
 
@@ -23,16 +28,60 @@ export class LoginScreen {
 
     });
 
+    this.emailErrorMessage = "";
+    this.passwordErrorMessage = "";
+    this.loginErrorMessage = "";
+    this.loginSucessMessage = "";
   }
 
-  onLoginclick() {
+   async onLoginclick() {
     alert("Botao de login clicado");
 
     console.log("Email", this.LoginForm.value.email);
     console.log("Password", this.LoginForm.value.password);
-
+    
+    if (this.LoginForm.value.email == "") {
+      this.emailErrorMessage = "O campo de e-mail e obrigatorio.";
+      this.passwordErrorMessage = "";
+      return;
 
   }
 
-}
+  if (this.LoginForm.value.password == "") {
+    this.passwordErrorMessage = "O campo de senha e obrigatorio.";
+    this.emailErrorMessage = "";
+    
+    return;
+  }
 
+  debugger
+  
+  let response = await fetch("https://senai-gpt-api.azurewebsites.net/login", {
+    method: "POST", // Enviar
+    headers: {
+      "Content-type": "application/json"
+    },
+    body: JSON.stringify({
+      email: this.LoginForm.value.email,
+      password: this.LoginForm.value.password
+    })
+  });
+  console.log("STATUS CODE", response.status);
+  
+  if (response.status >= 200 && response.status <= 299) {
+    this.loginSucessMessage = "Login realizado com sucesso!";
+    this.loginErrorMessage = "";
+    this.emailErrorMessage = "";
+    this.passwordErrorMessage = "";
+  }else {
+    this.loginErrorMessage = "Seu Login deu errado!";
+    this.loginSucessMessage= "";
+    this.emailErrorMessage = "";
+    this.passwordErrorMessage = "";
+  }
+
+  let email2 = this.LoginForm.value.email;
+  let password2 = this.LoginForm.value.password;
+
+}
+  }
