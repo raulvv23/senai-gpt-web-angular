@@ -78,8 +78,8 @@ export class LoginScreen {
     let meuToken = json.accessToken;
     let userid = json.user.id;
 
-    localStorage.setItem ("MeuToken", meuToken)
-    localStorage.setItem ("Meuid", userid)
+    localStorage.setItem ("meuToken", meuToken)
+    localStorage.setItem ("meuId", userid)
     window.location.href= "chat";
 
   }else {
