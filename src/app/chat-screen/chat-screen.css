@@ -29,7 +29,7 @@
 
 .logo{
 
-    background-image: url(../assets/Chat.png);
+    background-image: url("/imgs/Chat.png");
     justify-content: center;
     width: 444px;
     height: 101px;

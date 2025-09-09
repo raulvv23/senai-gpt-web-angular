@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
@@ -16,7 +16,7 @@ export class LoginScreen {
   loginErrorMessage: string;
   loginSucessMessage: string;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) {
     //quando a tela iniciar 
 
     //inicia o formulario
@@ -35,7 +35,6 @@ export class LoginScreen {
   }
 
    async onLoginclick() {
-    alert("Botao de login clicado");
 
     console.log("Email", this.LoginForm.value.email);
     console.log("Password", this.LoginForm.value.password);
@@ -53,8 +52,6 @@ export class LoginScreen {
     
     return;
   }
-
-  debugger
   
   let response = await fetch("https://senai-gpt-api.azurewebsites.net/login", {
     method: "POST", // Enviar
@@ -73,6 +70,18 @@ export class LoginScreen {
     this.loginErrorMessage = "";
     this.emailErrorMessage = "";
     this.passwordErrorMessage = "";
+
+    let json = await response.json();
+
+    console.log("Json", json)
+
+    let meuToken = json.accessToken;
+    let userid = json.user.id;
+
+    localStorage.setItem ("MeuToken", meuToken)
+    localStorage.setItem ("Meuid", userid)
+    window.location.href= "chat";
+
   }else {
     this.loginErrorMessage = "Seu Login deu errado!";
     this.loginSucessMessage= "";
@@ -82,6 +91,6 @@ export class LoginScreen {
 
   let email2 = this.LoginForm.value.email;
   let password2 = this.LoginForm.value.password;
-
+  this.cd.detectChanges();
 }
   }

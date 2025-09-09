@@ -8,8 +8,12 @@ export const routes: Routes = [
         loadComponent:()=> LoginScreen
     },
     {
+        path: "",
+        loadComponent: () => LoginScreen
+
+    },
+    {
         path: "chat",
         loadComponent: () => ChatScreen
-
     }
 ];
