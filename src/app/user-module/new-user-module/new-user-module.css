@@ -1,0 +1,84 @@
+
+/* login */
+.titulo-login {
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+  /* Estilo para a pagina de login do ChatGPT */
+  .page-container {
+    display: flex; /*Flexbox para alinhar os itens*/
+  }
+  /* imagem do robo */
+  .robo-image {
+    background-image: url("/imgs/image\.png");
+    background-size: cover;
+    background-position: 0px -100px;
+  
+    width: 50vw; /*50 % do tamanho horizontal do monitor*/
+    height: 100vh; /*50% do tamanho vertical do monitor*/
+  }
+  
+  .login-container {
+    width: 50vw; /*50 % do tamanho horizontal do monitor*/
+    height: 100vh; /*50% do tamanho vertical do monitor*/
+    display: flex; /*Flexbox para alinhar os itens*/
+    flex-direction: column; /*Coluna para alinhar os itens verticalmente*/
+    align-items: center; /*Alinha os itens no centro horizontalmente*/
+    justify-content: center; /*Alinha os itens no centro verticalmente*/
+  }
+  
+  .login-container img {
+    height: 60px;
+  }
+  
+  .inpt {
+  
+      padding: 18px;
+      background-color: rgba(128, 128, 128, 0.014);
+      width: 377px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      
+      
+      
+  }
+  
+  .btn {
+  
+      cursor: pointer;
+      padding:24px;
+      color: #ffff;
+      background-color: #1C1C1C;
+      width: 377px;
+      border-radius: 10px;
+      border: none;
+      font-size: 18px;
+      
+  
+  }
+  
+  
+  .error-message {
+  
+      color: red;
+      font-size: 12px;
+      margin-top: 10px;
+      
+  }
+  
+  .sucess-message {
+  
+    color: green;
+    font-size: 12px;
+    margin-top: 1px;
+   
+  
+  
+  }
+
+  .link{
+    margin: 15px;
+    color: black;
+  }
