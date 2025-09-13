@@ -5,7 +5,7 @@
             <h1></h1>
         </div>
 
-        <div class="login-container">
+        <div class="login-container" [formGroup]="loginForm">
 
             <img class="logo" src="imgs/Chat.png" alt="Logo do SenaiGPT.">
             
@@ -16,7 +16,7 @@
             <input class="inpt" formControlName="email" type="email" placeholder="Insira o e-mail">
             <input class="inpt" formControlName="password"type="password" placeholder="Insira a senha"> 
             <input class="inpt" formControlName="password2" type="password" placeholder="Insira a senha"> 
-            <button (click)="onLoginclick()">Entrar</button>
+            <button class= "btn" (click)="onEnterClick()">Entrar</button>
 
             <a class="link" href="#">Clique para fazer Login</a>
 
@@ -24,7 +24,7 @@
             <span class="error-message">{{emailErrorMessage}}</span>
             <span class="error-message">{{passwordErrorMessage}}</span>
 
-            <span class="error-message">{{loginErrorMessage}}</span>
+            <span class="error-message">{{errorLogin}}</span>
             <span class="sucess-message">{{loginSucessMessage}}</span>
 
 

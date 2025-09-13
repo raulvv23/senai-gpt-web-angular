@@ -21,10 +21,12 @@ export class NewUserModule {
 
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
-      nome: ["", [Validators.required]],
-      email: ["", [Validators.required]],
-      password: ["", [Validators.required]],
-      password2: ["", [Validators.required]]
+      nome: ["", [Validators.required, Validators.minLength(3)]],
+      email: ["", [Validators.required, Validators.minLength(9)]],
+      password: ["", [Validators.required, Validators.minLength(4)]],
+      password2: ["", [Validators.required, Validators.minLength(4)]]
+      
+
     });
 
     this.nomeErrorMessage = "";
@@ -35,7 +37,7 @@ export class NewUserModule {
     this.Login = ""
   }
 
-  async onLoginClick() {
+  async onEnterClick() {
     // Limpa mensagens anteriores
     this.nomeErrorMessage = "";
     this.emailErrorMessage = "";
@@ -75,8 +77,28 @@ export class NewUserModule {
       return;
     }
 
+    if (nome.lenght <3 ) {
+      this.nomeErrorMessage = "o nome deve conter no minimo 3 caracteres!";
+    }
+
+    
+    if (password.lenght <4 ) {
+      this.passwordErrorMessage = "A senha deve conter no minimo 4 caracteres!";
+    }
+
+    if (email.lenght <9 ) {
+      this.emailErrorMessage = "o email deve conter no minimo 9 caracteres!";
+
+    }
+
+    if(!email.includes("@") || !email.includes(".")) {
+      this.emailErrorMessage = "o email deve conter . e @ !";
+    }
+
+
+
     // Envia os dados para a API
-    let response = await fetch("https://senai-gpt-api.azurewebsites.net/usuarios", {
+    let response = await fetch("https://senai-gpt-api.azurewebsites.net/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
