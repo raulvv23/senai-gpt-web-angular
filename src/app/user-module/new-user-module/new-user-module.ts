@@ -77,22 +77,26 @@ export class NewUserModule {
       return;
     }
 
-    if (nome.lenght <3 ) {
+    if (nome.length <3 ) {
       this.nomeErrorMessage = "o nome deve conter no minimo 3 caracteres!";
+      return;
     }
 
     
-    if (password.lenght <4 ) {
+    if (password.length <4 ) {
       this.passwordErrorMessage = "A senha deve conter no minimo 4 caracteres!";
+      return;
     }
 
-    if (email.lenght <9 ) {
+    if (email.length <9 ) {
       this.emailErrorMessage = "o email deve conter no minimo 9 caracteres!";
+      return;
 
     }
 
     if(!email.includes("@") || !email.includes(".")) {
       this.emailErrorMessage = "o email deve conter . e @ !";
+      return;
     }
 
 
