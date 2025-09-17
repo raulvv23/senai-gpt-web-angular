@@ -4,7 +4,15 @@
     <aside class="left-panel">
     
         <div class="top">
-            <button * class="btn1">+ New Chat</button>
+            <button class="btn1">+ New Chat</button>
+
+            @for (chat of chats; track $index) {
+                <button  class= "btn" (click)="onChatClick(chat)">
+                    <i class="fa-regular fa-message"></i>
+                    {{chat.chatTitle}}
+                </button>
+            }
+
 
         </div>
     
