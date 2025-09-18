@@ -27,10 +27,12 @@
     </aside>
     
     <main class="central-panel">
+
+        @if (chatSelecionado == null) {
+
+            <div class="logo"></div>
     
-        <div class="logo"></div>
-    
-        <div class="container-sec">
+          <div class="container-sec">
     
             <div class="sec">
     
@@ -63,13 +65,40 @@
     
     
         </div>
+            
+        }
+        
+        @if (chatSelecionado != null) {
+             <div class="chat-container">
+
+             <div class="chat-header">
+                <h2>{{chatSelecionado.chatTitle}}</h2>
+
+               </div>
+
+             <div class="chat-messages">
+
+                @for (msg of mensagens; track $index) {
+
+                    <p class="message-item" [class.chatbot]="msg.userId == 'chatbot'">{{ msg.text }}</p>
+                }
+
+
+
+             </div>
+
+
+            </div>
+
+        }
+    
     
     
         <div class="container-inpt">
             <i class="fa-solid fa-microphone"></i>
             <i class="fa-regular fa-image"></i>
-            <input class="inpt" type="text" placeholder="type message" >
-            <i class=" send-button fa-regular fa-paper-plane"></i>
+            <input [formControl]="mensagemUsuario" class="inpt" type="text" placeholder="type message" >
+            <i class=" send-button fa-regular fa-paper-plane" (click)="enviarMensagem()"></i>
     
         </div>
     
@@ -78,4 +107,3 @@
     
     </main>
 </div>
-

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ChangeDetectorRef, Component } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { firstValueFrom } from 'rxjs';
 
 interface Ichat {
@@ -21,8 +22,8 @@ interface IMessage {
 
 @Component({
   selector: 'app-chat-screen',
-  imports: [ CommonModule],
-  templateUrl: './chat-screen.html',
+  imports: [ CommonModule, ReactiveFormsModule],
+  templateUrl:'./chat-screen.html',
   styleUrl: './chat-screen.css'
 })
 export class ChatScreen {
@@ -30,6 +31,7 @@ export class ChatScreen {
   chats : Ichat [];
   chatSelecionado: Ichat;
   mensagens: IMessage[];
+  mensagemUsuario = new FormControl("");
 
   constructor (private http: HttpClient, private cd: ChangeDetectorRef) {
 
@@ -87,6 +89,20 @@ export class ChatScreen {
       console.log("Mensagens", response); 
 
       this.mensagens = response as IMessage[];
+
+      this.cd.detectChanges();
+
+    }
+
+    async enviarMensagem () {
+
+      let novaMensagemusuario = {
+
+        chatId: this.chatSelecionado.id,
+        userId: localStorage.getItem("meuId"),
+        text: this.mensagemUsuario.value
+
+      };
 
     }
 
