@@ -9,8 +9,7 @@
   .page-container {
     display: flex; /*Flexbox para alinhar os itens*/
   }
-  /* imagem do robo */
-  .robo-image {
+  .image {
     background-image: url("/imgs/image\.png");
     background-size: cover;
     background-position: 0px -100px;
@@ -82,3 +81,27 @@
     margin: 15px;
     color: black;
   }
+
+  
+
+@media screen and (max-width: 1000px) {
+  /*ate 1000px, e um tablet*/
+
+  .image{
+    background-position: center;
+  }
+
+
+}
+
+@media screen and (max-width: 768px){
+/*ate 768px, e um celular*/
+
+.image{
+  display: none;
+}
+
+.login-container{
+  width: 100vw;
+}
+}

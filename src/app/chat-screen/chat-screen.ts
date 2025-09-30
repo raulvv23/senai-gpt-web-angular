@@ -180,3 +180,7 @@ export class ChatScreen {
 function novoChat() {
   throw new Error('Function not implemented.');
 }
+
+
+
+
