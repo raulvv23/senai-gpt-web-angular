@@ -30,11 +30,19 @@ export class ChatScreen {
   chatSelecionado: IChat | null = null;
   mensagens: IMessage[] = [];
   mensagemUsuario = new FormControl('');
+  darkMode: boolean = false;
 
   constructor(private http: HttpClient, private cd: ChangeDetectorRef) {}
 
   ngOnInit() {
     this.getChats();
+
+    let darkModeLocalStorage = localStorage.getItem("darkMode");
+
+    if (darkModeLocalStorage = "true"){
+      this.darkMode = true;
+      document.body.classList.toggle("dark-mode", this.darkMode);
+    }
   }
 
   async getChats() {
@@ -171,16 +179,25 @@ export class ChatScreen {
         headers: {
           'Content-type': 'application/json',
           Authorization: 'Bearer ' + localStorage.getItem('meuToken'),
+        
         },
       })
     );
   }
-}
 
-function novoChat() {
-  throw new Error('Function not implemented.');
-}
+  
+  ligarDesligarDarkMode() {
+  
+    this.darkMode = !this.darkMode;
+    
+    document.body.classList.toggle("dark-mode", this.darkMode);
 
+    localStorage.setItem("darkMode", this.darkMode.toString())
+    
+  
+  }
+  
+}
 
 
 

@@ -240,3 +240,75 @@
     background: #000;
   
   }
+
+  ::ng-deep body.dark-mode .left-panel {
+
+    background-color: black !important;
+  }
+
+  ::ng-deep body.dark-mode .btn1 {
+
+    background-color: white !important;
+    color: #000;
+  }
+
+  
+  ::ng-deep body.dark-mode .btn {
+
+    background-color: black !important;    
+    color: white;
+    border: none;
+
+  }
+
+  ::ng-deep body.dark-mode .central-panel {
+
+    background-color: black !important;
+    color: white;
+    
+
+  }
+
+  ::ng-deep body.dark-mode .container-sec {
+
+    background-color: black !important;
+
+    
+
+  } ::ng-deep body.dark-mode .sec {
+
+    background-color: black !important;
+    color: black;
+    
+
+  }
+
+ ::ng-deep body.dark-mode .logo {
+
+    background-image: url("/imgs/Chat-darkmode.png");
+    
+
+  }
+
+ ::ng-deep body.dark-mode .sec-p {
+
+    color: white;
+    background-color: black;
+    
+
+  }
+
+  ::ng-deep body.dark-mode .t1 {
+
+    color: white;
+    
+
+  }
+
+ 
+
+
+  
+
+
+
